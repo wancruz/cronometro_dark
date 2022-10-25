@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
+:root {
+  font-size: 62.5%;
+  --hue:240;
+  --primary-color: hsl(var(--hue), 6%, 21%);
+  --bg-color:hsla(50, 2%, 100%);
+  --text-color: hsla(240, 6%, 21%);
+  
+}
+/* ============Dark=========================================*/
+body.dark {
+  background-color: black;
+  color: white; 
+}
+
+.colorSettings svg path
+ {
+  transition: fill 0.5s linear;
+  fill:white;
+}
+
+#screenMode {
+align-self:flex-start;
+margin-top: 10rem;
+}
+/* ===========================================================*/
+
+body {
+  background-color:var(--bg-color) ;
+  color: var(--text-color);
+  font-family: 'Roboto',sans-serif;
+  font-size: 1.6rem;
+  min-height: 100vh;
+  display: grid;
+  transition: background 0.5s linear, color 0.5s linear;
+}
+
+
+main { 
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-self: center;
+  gap: 19.2rem;
+
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+
+.hide {
+  display: none;
+}
+
+
+#sons button:nth-child(1) {
+  grid-area: A;
+
+}
+#sons button:nth-child(2) {
+  grid-area: B;
+
+}
+
+#sons{
+  
+  display: grid;
+  grid-template-areas: "A B"
+                       "C D";
+  gap:3.2rem;  
+}
+
+
+#buttons{
+   display: flex;
+   justify-content: center;
+   gap:6.2rem;
+   padding:4px;
+}
+
+#sons button {
+ 
+  height: clamp(13rem, 13rem + 10vw, 18rem);
+  width: clamp(12rem, 10rem + 10vw, 17rem);
+
+  border-radius: 24px;
+  border: none;
+  
+  background-color:#E1E1E6;
+
+}
+
+#sons button.onFocus {
+  background-color: rgb(25, 25, 158);
+  fill: white
+}
+
+
+
+#timer {
+font-size: clamp(3.2rem, 3.2rem + 10vw, 12.6rem);
+display: flex;
+justify-content: center;
+align-content: center;
+}
+
+
+@media (max-width:820px) {
+
+
+ main {
+  display: flex;
+  flex-direction: column;
+  align-self:end;
+  margin: 0 0 10rem;
+  gap: clamp(1rem,1rem , 6rem);
+  margin-top: 5rem;
+ }
+
+ #timer {
+  margin-bottom: 2rem;
+  }
+
+ #buttons {
+  margin-bottom: 3rem;
+  gap:clamp(2rem, 2rem + 6vw, 9rem);
+  
+ }
+ #screenMode {
+  align-self: flex-end;
+  
+  }
+
+
+}
